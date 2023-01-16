@@ -15,7 +15,7 @@
     <div class="timer">Time: <span id="time">0</span></div>
 
     <div class="wrapper">
-      <div id="start-screen" class="hide">
+      <div id="start-screen">
         <h1>Coding Quiz Challenge</h1>
         <p>
           Try to answer the following code-related questions within the time
@@ -25,9 +25,15 @@
         <button id="start">Start Quiz</button>
       </div>
 
-      <div id="questions">
+      <div id="questions" class="hide"> 
         <h2 id="question-title"></h2>
-        <div id="choices" class="choices"></div>
+        <div id="choices" class="choices">
+          <button id="enter1"></button>
+          <button id="enter2"></button>
+          <button id="enter3"></button>
+          <button id="enter4"></button>
+onclick next to add
+        </div>
       </div>
 
       <div id="end-screen" class="hide">
@@ -43,6 +49,7 @@
     </div>
 
     <script src="./script.js"></script>
+    
 
   </body>
 </html>
