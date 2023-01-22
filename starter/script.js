@@ -1,17 +1,16 @@
 var body = document.body;
 var h1El = document.createElement("h1");
 //getElementById?
-var tag = document.createElement("div")
+var tag = document.createElement("div");
+var h2El = document.createElement ("h2");
 //var buttonEl = document.createElement("div");
 var favoriteEl = document.createElement("div");
-var timerbox = document.getElementById("time")
+var timerbox = document.getElementById("time");
 h1El.textContent = "Coding Quiz Challenge";
+h2El.textContent = "All done!"
 
 var startScreen = document.getElementById("start-screen")
-var questionsLog =document.getElementById("questions")
-
-
-
+var questionsLog = document.getElementById("questions")
 
 
 tag.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!"
@@ -20,10 +19,12 @@ var btn = document.getElementById("start")
 btn.addEventListener("click", function Start() {
   // let Start = document.getElementById("Start Quiz");
   // btn.innerHTML = "Start Quiz"
-  startScreen.classList.add("hide")
-  questionsLog.classList.remove("hide")
+  startScreen.classList.add("hide");
+  questionsLog.classList.remove("hide");
   timer()
-questionsReveal()
+  questionsReveal()
+
+  endScreen.classList.add("hide")
 
 })
 
@@ -41,26 +42,25 @@ let questions = [{ question: "In what year was penicillin discovered?", answers:
 
 let currentQuestion = 0;
 //render
-let btnchoice1 = document.getElementById("enter1");
-let btnchoice2 = document.getElementById("enter2");
-let btnchoice3 = document.getElementById("enter3")
-let btnchoice4 = document.getElementById("enter4");
-
-
-
-
+let btnchoice1 = document.getElementById("next1");
+let btnchoice2 = document.getElementById("next2");
+let btnchoice3 = document.getElementById("next3")
+let btnchoice4 = document.getElementById("next4");
 
 function questionsReveal() {
 
   document.querySelector("#question-title").textContent = questions[currentQuestion].question
 
-  console.log(questions[currentQuestion].answers[0])
-  console.log(questions[currentQuestion].answers[1])
-  console.log(questions[currentQuestion].answers[2])
-  console.log(questions[currentQuestion].answers[3])
-btnchoice1.textContent = questions[currentQuestion].answers[0]
-}
+  console.log(questions[currentQuestion].answers[0]);
+  console.log(questions[currentQuestion].answers[1]);
+  console.log(questions[currentQuestion].answers[2]);
+  console.log(questions[currentQuestion].answers[3]);
 
+  btnchoice1.textContent = questions[currentQuestion].answers[0]
+  btnchoice2.textContent = questions[currentQuestion].answers[1]
+  btnchoice3.textContent = questions[currentQuestion].answers[2]
+  btnchoice4.textContent = questions[currentQuestion].answers[3]
+}
 
 
 choicesEl.addEventListener("click", function (event) {
@@ -86,3 +86,6 @@ function timer() {
   }, 1000);
 
 }
+
+let endScreen = document.getElementById("end-screen")
+
